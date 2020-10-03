@@ -2,7 +2,9 @@ using FluentAssertions;
 using NUnit.Framework;
 using Sharp.CSS.CssStyleSets;
 using Sharp.CSS.Services;
+using Sharp.CSS.Types;
 using System;
+using System.Drawing;
 
 namespace Sharp.CSS.Tests
 {
