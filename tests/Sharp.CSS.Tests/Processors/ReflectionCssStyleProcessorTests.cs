@@ -62,5 +62,25 @@ namespace Sharp.CSS.Tests
 
             result.Should().Be(".block{width: 500px;height: 250px;}");
         }
+
+        [Test]
+        public void ProcessDynamicValues()
+        {
+            var styleSet = new StyleSet
+            {
+                Width = 500,
+                Height = 250,
+            };
+
+            styleSet
+                .With("font-size", new CssSize(42))
+                .With("font-color", "green")
+                .With("border-radius", 20)
+                .With("composite", "'foo bla bar'");
+
+            var result = _processor.Process("dynamic", styleSet);
+
+            result.Should().Be(".dynamic{width: 500px;height: 250px;font-size: 42px;font-color: green;border-radius: 20;composite: 'foo bla bar';}");
+        }
     }
 }
