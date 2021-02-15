@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Andrii Snihyr</Authors>
+    <Company />
+    <PackageProjectUrl>https://github.com/BerserkerDotNet/Sharp.CSS</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BerserkerDotNet/Sharp.CSS</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Blazor CSS CSharp C#</PackageTags>
+    <Description>TBD</Description>
+    <Copyright>Andrii Snihyr 2021</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +22,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.0" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

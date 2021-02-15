@@ -18,13 +18,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_config", "_config", "{C802
 		README.md = README.md
 		stylecop.json = stylecop.json
 		StyleCop.ruleset = StyleCop.ruleset
+		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.CSS.Tests", "tests\Sharp.CSS.Tests\Sharp.CSS.Tests.csproj", "{3634CCB7-EC36-431C-A2EC-4445EAE6DD5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.CSS.Samples", "samples\Sharp.CSS.Samples\Sharp.CSS.Samples.csproj", "{9EF78BF8-72EA-4C33-871C-33944625ECAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.CSS.Samples", "samples\Sharp.CSS.Samples\Sharp.CSS.Samples.csproj", "{9EF78BF8-72EA-4C33-871C-33944625ECAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.CSS.Blazor", "src\Sharp.CSS.Blazor\Sharp.CSS.Blazor.csproj", "{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp.CSS.Blazor", "src\Sharp.CSS.Blazor\Sharp.CSS.Blazor.csproj", "{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4AE912D0-9833-4D07-AC0E-0D6796899467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +53,8 @@ Global
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +64,7 @@ Global
 		{3634CCB7-EC36-431C-A2EC-4445EAE6DD5A} = {9C457B8F-4F54-47D0-8405-CC8DA6801CF5}
 		{9EF78BF8-72EA-4C33-871C-33944625ECAD} = {C1C0DA17-0139-443B-8694-89F34FF5EE8B}
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1} = {2676CC45-410E-453E-8C7D-FEF44A68EC6B}
+		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF} = {4AE912D0-9833-4D07-AC0E-0D6796899467}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E041E70B-A428-4EA3-A8F5-54BEAE5FD7E6}
