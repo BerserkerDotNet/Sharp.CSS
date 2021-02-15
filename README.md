@@ -13,11 +13,17 @@
 
 1. Install `Sharp.CSS.Blazor` package
 1. Add the following namespaces to the _Import.razor file.
+   
    `@using Sharp.CSS.Interfaces`
+   
    `using Sharp.CSS.CssStyleSets`
+   
    `@using Sharp.CSS.Samples`
+   
    `@using Sharp.CSS.Samples.Shared`
+   
    `@using Sharp.CSS.Blazor`
+   
 1. Add `<SharpCssStyles />` component to the App.razor file.
 1. In the page/component inject the css service `@inject ICssStyleService CssService`
 1. Use `GetClassName` to get the css class name
