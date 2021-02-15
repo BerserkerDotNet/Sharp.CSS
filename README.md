@@ -16,7 +16,7 @@
    
    `@using Sharp.CSS.Interfaces`
    
-   `using Sharp.CSS.CssStyleSets`
+   `@using Sharp.CSS.CssStyleSets`
    
    `@using Sharp.CSS.Samples`
    
