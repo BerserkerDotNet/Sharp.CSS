@@ -1,0 +1,61 @@
+﻿@page "/counter"
+
+@inject ICssStyleService CssService
+
+<h1>Counter</h1>
+
+<div class="@divClassName"></div>
+
+<div class="@secondDivClassName"></div>
+
+<p class="@CssService.GetClassName(new StyleSet
+           {
+            FontWeight = "bold"
+           }, "counter")">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="ChangeColor">Click me</button>
+
+@code {
+    private Random _random = new Random(0);
+    private int currentCount = 0;
+    private string divClassName = string.Empty;
+    private string secondDivClassName = string.Empty;
+
+    private void ChangeColor()
+    {
+        currentCount++;
+
+        divClassName = CssService.GetClassName(new StyleSet
+        {
+            Width = 1000,
+            Height = 500,
+            BackgroundColor = System.Drawing.Color.FromArgb(_random.Next(0, 255), _random.Next(0, 255), _random.Next(0, 255))
+        });
+
+        secondDivClassName = CssService.GetClassName(new StyleSet
+        {
+            Width = 1000,
+            Height = 500,
+            BackgroundColor = System.Drawing.Color.FromArgb(_random.Next(0, 255), _random.Next(0, 255), _random.Next(0, 255))
+        });
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("On param set");
+
+        divClassName = CssService.GetClassName(new StyleSet
+        {
+            Width = 1000,
+            Height = 500,
+            BackgroundColor = System.Drawing.Color.Aqua
+        });
+
+        secondDivClassName = CssService.GetClassName(new StyleSet
+        {
+            Width = 1000,
+            Height = 500,
+            BackgroundColor = System.Drawing.Color.Yellow
+        });
+    }
+}

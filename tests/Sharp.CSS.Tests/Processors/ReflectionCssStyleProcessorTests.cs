@@ -31,14 +31,18 @@ namespace Sharp.CSS.Tests
             _processor.Invoking(p => p.Process("foo", null))
                 .Should().Throw<ArgumentNullException>($"style cannot be null");
 
-            _processor.Process("foo", new StyleSet { })
+            var set = new StyleSet { };
+
+            _processor.Process("foo", set)
                 .Should().Be(".foo{}");
+            _processor.Process(set)
+                .Should().Be(string.Empty);
         }
 
         [Test]
         public void ConvertsPropertiesToClass()
         {
-            var result = _processor.Process("block", new StyleSet
+            var set = new StyleSet
             {
                 Width = 100,
                 Height = 50,
@@ -46,21 +50,23 @@ namespace Sharp.CSS.Tests
                 MinHeight = 25,
                 MaxWidth = 200,
                 MaxHeight = 100
-            });
+            };
 
-            result.Should().Be(".block{max-width: 200px;max-height: 100px;min-width: 50px;min-height: 25px;width: 100px;height: 50px;}");
+            _processor.Process("block", set).Should().Be(".block{max-width: 200px;max-height: 100px;min-width: 50px;min-height: 25px;width: 100px;height: 50px;}");
+            _processor.Process(set).Should().Be("max-width: 200px;max-height: 100px;min-width: 50px;min-height: 25px;width: 100px;height: 50px;");
         }
 
         [Test]
         public void IgnoresNotSetProperties()
         {
-            var result = _processor.Process("block", new StyleSet
+            var set = new StyleSet
             {
                 Width = 500,
                 Height = 250,
-            });
+            };
 
-            result.Should().Be(".block{width: 500px;height: 250px;}");
+            _processor.Process("block", set).Should().Be(".block{width: 500px;height: 250px;}");
+            _processor.Process(set).Should().Be("width: 500px;height: 250px;");
         }
 
         [Test]
@@ -78,9 +84,21 @@ namespace Sharp.CSS.Tests
                 .With("border-radius", 20)
                 .With("composite", "'foo bla bar'");
 
-            var result = _processor.Process("dynamic", styleSet);
+            _processor.Process("dynamic", styleSet)
+                .Should().Be(".dynamic{width: 500px;height: 250px;font-size: 42px;font-color: green;border-radius: 20;composite: 'foo bla bar';}");
 
-            result.Should().Be(".dynamic{width: 500px;height: 250px;font-size: 42px;font-color: green;border-radius: 20;composite: 'foo bla bar';}");
+            _processor.Process(styleSet)
+                .Should().Be("width: 500px;height: 250px;font-size: 42px;font-color: green;border-radius: 20;composite: 'foo bla bar';");
+        }
+
+        [TestCase("")]
+        [TestCase(" ")]
+        [TestCase("some random thing")]
+        [TestCase("{value:bla}")]
+        public void WrapInClassAnyValue(string value)
+        {
+            var expected = $".foo{{{value}}}";
+            _processor.WrapInClassSelector("foo", value).Should().Be(expected);
         }
     }
 }

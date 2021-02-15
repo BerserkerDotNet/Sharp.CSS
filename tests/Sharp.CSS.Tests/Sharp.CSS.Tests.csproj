@@ -38,4 +38,9 @@
     <None Include="..\..\StyleCop.ruleset" Link="StyleCop.ruleset" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectCapability Include="DynamicDependentFile" />
+    <ProjectCapability Include="DynamicFileNesting" />
+  </ItemGroup>
+
 </Project>

@@ -9,7 +9,5 @@ namespace Sharp.CSS.CssStyleSets
         public string Clip { get; set; }
 
         public string ClipPath { get; set; }
-
-        public string ClipPath { get; set; }
     }
 }

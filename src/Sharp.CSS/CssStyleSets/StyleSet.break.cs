@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sharp.CSS.CssStyleSets
+﻿namespace Sharp.CSS.CssStyleSets
 {
-    public partial class StylesSet
+    public partial class StyleSet
     {
         public string BreakAfter { get; set; }
         public string BreakBefore { get; set; }

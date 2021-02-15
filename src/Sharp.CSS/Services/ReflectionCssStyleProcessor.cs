@@ -23,11 +23,16 @@ namespace Sharp.CSS.Services
 
         public string Process(string className, StyleSet set)
         {
-            if (string.IsNullOrWhiteSpace(className)) 
+            if (set is null)
             {
-                throw new ArgumentNullException(nameof(className));
+                throw new ArgumentNullException(nameof(set));
             }
 
+            return WrapInClassSelector(className, Process(set));
+        }
+
+        public string Process(StyleSet set)
+        {
             if (set is null)
             {
                 throw new ArgumentNullException(nameof(set));
@@ -43,8 +48,6 @@ namespace Sharp.CSS.Services
 
             var cssClassBuilder = new StringBuilder();
 
-            cssClassBuilder.AppendFormat(".{0}", className);
-            cssClassBuilder.Append("{");
             foreach (var property in propertiesWithValues)
             {
                 var matches = _nameParser.Matches(property.Name);
@@ -52,6 +55,22 @@ namespace Sharp.CSS.Services
 
                 cssClassBuilder.AppendFormat("{0}: {1};", propertyName, property.Value);
             }
+
+            return cssClassBuilder.ToString();
+        }
+
+        public string WrapInClassSelector(string className, string cssContent)
+        {
+            if (string.IsNullOrWhiteSpace(className))
+            {
+                throw new ArgumentNullException(nameof(className));
+            }
+
+            var cssClassBuilder = new StringBuilder();
+
+            cssClassBuilder.AppendFormat(".{0}", className);
+            cssClassBuilder.Append("{");
+            cssClassBuilder.Append(cssContent);
             cssClassBuilder.Append("}");
 
             return cssClassBuilder.ToString();

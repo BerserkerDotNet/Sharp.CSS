@@ -5,7 +5,7 @@ namespace Sharp.CSS.CssStyleSets
 {
     public partial class StyleSet
     {
-        public Dictionary<string, string> DynamicProperties { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> DynamicProperties { get; } = new Dictionary<string, string>();
 
         public StyleSet With(string key, string value)
         {

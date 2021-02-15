@@ -1,0 +1,31 @@
+﻿@implements ICssStyleEmitListener
+@implements IDisposable
+
+@inject ICssStyleEmitter Emitter
+
+<style>
+    @foreach (var cssClass in classes)
+    {
+        @cssClass
+    }
+</style>
+
+@code {
+    private List<string> classes = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        Emitter.RegisterListener(this);
+    }
+
+    public void OnCssEmitted(string cssContent)
+    {
+        classes.Add(cssContent);
+        this.StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        Emitter?.RemoveListener(this);
+    }
+}
