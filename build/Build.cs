@@ -3,15 +3,18 @@ using Nuke.Common.CI;
 using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.Execution;
 using Nuke.Common.Git;
+using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Nuke.Common.Tools.NuGet;
 using Nuke.Common.Utilities;
 using Nuke.Common.Utilities.Collections;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.IO.PathConstruction;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
+using System.Linq;
 
 [GitHubActions(
     "deployment",
@@ -114,6 +117,7 @@ class Build : NukeBuild
 
     Target Release => _ => _
         .DependsOn(Package)
+        .OnlyWhenDynamic(() => !IsPackageAlreadyPublished())
         .Requires(() => !NuGetApiKey.IsNullOrEmpty())
         .Requires(() => IsOriginalRepository && (GitRepository.IsOnMasterBranch() || GitRepository.IsOnReleaseBranch()))
         .Executes(() =>
@@ -124,4 +128,19 @@ class Build : NukeBuild
                 .CombineWith(PackagesDirectory.GlobFiles("*.nupkg").NotEmpty(), (cs, f) => cs.SetTargetPath(f)),
                 degreeOfParallelism: 2);
         });
+
+    private bool IsPackageAlreadyPublished()
+    {
+        ToolPathResolver.NuGetPackagesConfigFile = Solution.GetProject("_build").Path;
+        var output = NuGetTasks.NuGet($"list \"PackageId: Sharp.CSS\" -PreRelease -Source {Source}", RootDirectory);
+        if (output.Count == 0)
+        {
+            return false;
+        }
+
+        var version = output.ElementAt(0).Text.Replace("Sharp.CSS", string.Empty).Trim();
+        var count = PackagesDirectory.GlobFiles($"*{version}*.nupkg").Count;
+
+        return count > 0;
+    }
 }
