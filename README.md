@@ -4,8 +4,8 @@
 
 ![deployment](https://github.com/BerserkerDotNet/Sharp.CSS/workflows/deployment/badge.svg?branch=master)
 
-[![Nuget](https://buildstats.info/nuget/Sharp.CSS?v=0.1.4-alpha)](https://www.nuget.org/packages/Sharp.CSS)
-[![Nuget](https://buildstats.info/nuget/Sharp.CSS.Blazor?v=0.1.4-alpha)](https://www.nuget.org/packages/Sharp.CSS.Blazor)
+[![NuGet Badge](https://buildstats.info/nuget/Sharp.CSS?includePreReleases=true)](https://www.nuget.org/packages/Sharp.CSS/)
+[![NuGet Badge](https://buildstats.info/nuget/Sharp.CSS.Blazor?includePreReleases=true)](https://www.nuget.org/packages/Sharp.CSS.Blazor/)
 
 ## Usage
 
