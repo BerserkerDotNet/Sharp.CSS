@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Sharp.CSS.Types;
 
 namespace Sharp.CSS.CssStyleSets
 {
@@ -9,16 +7,16 @@ namespace Sharp.CSS.CssStyleSets
         /// <summary>
         /// Sets the behavior of the background and border of an element at page-break, or, for in-line elements, at line-break.
         /// </summary>
-        public string BoxDecorationBreak { get; set; }
+        public BoxDecorationBreak BoxDecorationBreak { get; set; }
 
         /// <summary>
         /// Attaches one or more shadows to an element
         /// </summary>
-        public string BoxShadow { get; set; }
+        public BoxShadow BoxShadow { get; set; }
 
         /// <summary>
         /// Defines how the width and height of an element are calculated: should they include padding and borders, or not
         /// </summary>
-        public string BoxSizing { get; set; }
+        public BoxSizing BoxSizing { get; set; }
     }
 }

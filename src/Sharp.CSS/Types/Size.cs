@@ -1,4 +1,5 @@
 ﻿using Sharp.CSS.Extensions;
+using System.Drawing;
 
 namespace Sharp.CSS.Types
 {

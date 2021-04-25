@@ -13,7 +13,7 @@ namespace Sharp.CSS.Types
                 throw new ArgumentNullException(nameof(value), "Value can't be null.");
             }
 
-            _value = value;
+            _value = value.Trim();
         }
 
         public override string ToString()
