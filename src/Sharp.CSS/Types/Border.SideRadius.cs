@@ -7,17 +7,17 @@
         {
         }
 
-        public BorderSideRadius(CssSize size)
+        public BorderSideRadius(Size size)
             : this($"{size}")
         {
         }
 
-        public BorderSideRadius(CssSize size1, CssSize size2)
+        public BorderSideRadius(Size size1, Size size2)
             : this($"{size1} {size2}".Trim())
         {
         }
 
-        public static implicit operator BorderSideRadius(CssSize size) => new BorderSideRadius(size);
+        public static implicit operator BorderSideRadius(Size size) => new BorderSideRadius(size);
         public static implicit operator BorderSideRadius(string value) => new BorderSideRadius(value);
 
         public static readonly BorderSideRadius Initial = new BorderSideRadius("initial");

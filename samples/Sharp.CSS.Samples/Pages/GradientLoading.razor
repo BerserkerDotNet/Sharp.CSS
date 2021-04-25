@@ -13,7 +13,7 @@
 </div>
 
 @code {
-    private string Card => Css.GetClassName(new StyleSet { Width = new Types.CssSize(18, Types.CssUnits.rem) });
+    private string Card => Css.GetClassName(new StyleSet { Width = new Types.Size(18, Types.CssUnits.rem) });
     private string CardImage => Css.GetClassName(new StyleSet { Width = 286, Height = 180, MarginBottom = 10 });
     private string CardHeader => Css.GetClassName(new StyleSet { Width = 246, Height = 24, MarginBottom = 10 });
     private string CardText => Css.GetClassName(new StyleSet { Width = 246, Height = 72, MarginBottom = 10 });
@@ -21,7 +21,7 @@
     private string Gradient => Css.GetClassName(new StyleSet
     {
         Background = new Sharp.CSS.Types.Background("linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%)"),
-        BackgroundSize = new Types.BackgroundSize(1000, new Types.CssSize(100, Types.CssUnits.percentage)),
+        BackgroundSize = new Types.BackgroundSize(1000, new Types.Size(100, Types.CssUnits.percentage)),
         BackgroundPosition = new Types.BackgroundPosition(486, 0),
         Position = "relative",
         AnimationDuration = "2s",

@@ -79,7 +79,7 @@ namespace Sharp.CSS.Tests
             };
 
             styleSet
-                .With("font-size", new CssSize(42))
+                .With("font-size", new Types.Size(42))
                 .With("font-color", "green")
                 .With("border-radius", 20)
                 .With("composite", "'foo bla bar'");

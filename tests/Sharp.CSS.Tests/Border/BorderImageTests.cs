@@ -27,7 +27,7 @@ namespace Sharp.CSS.Tests.Border
                 new LinearGradient(Color.Red, Color.Blue),
                 new BorderImageSlice(27, 23),
                 new BorderImageWidth(50, 30),
-                new CssSize(1, CssUnits.rem),
+                new Types.Size(1, CssUnits.rem),
                 new BorderImageRepeat(BorderImageRepeat.Round, BorderImageRepeat.Space)), "linear-gradient(0deg, red, blue) 27 23 / 50px 30px / 1rem round space");
         }
     }

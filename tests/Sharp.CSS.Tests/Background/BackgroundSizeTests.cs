@@ -11,7 +11,7 @@ namespace Sharp.CSS.Tests
         public void DirectUsage()
         {
             new BackgroundSize(25, 35).ToString().Should().Be("25px 35px");
-            new BackgroundSize(50, new CssSize(45, CssUnits.percentage)).ToString().Should().Be("50px 45%");
+            new BackgroundSize(50, new Size(45, CssUnits.percentage)).ToString().Should().Be("50px 45%");
         }
 
         [Test]

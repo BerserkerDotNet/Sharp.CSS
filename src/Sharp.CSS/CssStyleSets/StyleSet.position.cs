@@ -8,10 +8,10 @@ namespace Sharp.CSS.CssStyleSets
     public partial class StyleSet
     {
         public string Position { get; set; }
-        public CssSize Top { get; set; }
-        public CssSize Bottom { get; set; }
-        public CssSize Left { get; set; }
-        public CssSize Right { get; set; }
+        public Size Top { get; set; }
+        public Size Bottom { get; set; }
+        public Size Left { get; set; }
+        public Size Right { get; set; }
         public string Float { get; set; }
         public string Clear { get; set; }
     }

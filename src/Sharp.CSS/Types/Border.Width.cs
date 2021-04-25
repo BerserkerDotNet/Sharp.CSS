@@ -23,8 +23,8 @@
         }
 
         public static implicit operator BorderWidth(string value) => new BorderWidth(value);
-        public static implicit operator BorderWidth(CssSize size) => new BorderWidth(size.ToString());
-        public static implicit operator BorderWidth(int size) => new BorderWidth(new CssSize(size).ToString());
+        public static implicit operator BorderWidth(Size size) => new BorderWidth(size.ToString());
+        public static implicit operator BorderWidth(int size) => new BorderWidth(new Size(size).ToString());
 
         public static readonly BorderWidth Medium = new BorderWidth("medium");
         public static readonly BorderWidth Thin = new BorderWidth("thin");

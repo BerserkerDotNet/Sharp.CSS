@@ -20,7 +20,7 @@ namespace Sharp.CSS.Tests.Border
         {
             VerifyValue("foo bla", "foo bla");
             VerifyValue(45, "45px");
-            VerifyValue(new CssSize(78), "78px");
+            VerifyValue(new Size(78), "78px");
         }
 
         [Test]

@@ -29,7 +29,7 @@
 
         public static implicit operator BorderImageOutset(float multiple) => new BorderImageOutset(multiple);
         public static implicit operator BorderImageOutset(int multiple) => new BorderImageOutset(multiple);
-        public static implicit operator BorderImageOutset(CssSize size) => new BorderImageOutset(size);
+        public static implicit operator BorderImageOutset(Size size) => new BorderImageOutset(size);
         public static implicit operator BorderImageOutset(Value value) => new BorderImageOutset(value);
         public static implicit operator BorderImageOutset(string value) => new BorderImageOutset(value);
 
@@ -43,7 +43,7 @@
             {
             }
 
-            public Value(CssSize size)
+            public Value(Size size)
                 : base(size.ToString())
             {
             }
@@ -60,7 +60,7 @@
 
             public static implicit operator Value(float multiple) => new Value(multiple);
             public static implicit operator Value(int multiple) => new Value(multiple);
-            public static implicit operator Value(CssSize size) => new Value(size);
+            public static implicit operator Value(Size size) => new Value(size);
             public static implicit operator Value(string value) => new Value(value);
         }
     }

@@ -4,13 +4,13 @@ namespace Sharp.CSS.CssStyleSets
 {
     public partial class StyleSet
     {
-        public CssSize MaxWidth { get; set; }
-        public CssSize MaxHeight { get; set; }
+        public Size MaxWidth { get; set; }
+        public Size MaxHeight { get; set; }
 
-        public CssSize MinWidth { get; set; }
-        public CssSize MinHeight { get; set; }
+        public Size MinWidth { get; set; }
+        public Size MinHeight { get; set; }
 
-        public CssSize Width { get; set; }
-        public CssSize Height { get; set; }
+        public Size Width { get; set; }
+        public Size Height { get; set; }
     }
 }

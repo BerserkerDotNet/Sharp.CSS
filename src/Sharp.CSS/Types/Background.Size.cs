@@ -3,7 +3,7 @@
     public class BackgroundSize
     {
         private readonly string _value;
-        public BackgroundSize(CssSize width, CssSize hegiht)
+        public BackgroundSize(Size width, Size hegiht)
         {
             _value = $"{width} {hegiht}";
         }

@@ -7,19 +7,19 @@
         {
         }
 
-        public BorderSpacing(CssSize value)
+        public BorderSpacing(Size value)
             : base(value.ToString())
         {
         }
 
-        public BorderSpacing(CssSize horizontal, CssSize vertical)
+        public BorderSpacing(Size horizontal, Size vertical)
             : base($"{horizontal} {vertical}")
         {
         }
 
         public static implicit operator BorderSpacing(int value) => new BorderSpacing(value);
         public static implicit operator BorderSpacing(float value) => new BorderSpacing(value);
-        public static implicit operator BorderSpacing(CssSize value) => new BorderSpacing(value);
+        public static implicit operator BorderSpacing(Size value) => new BorderSpacing(value);
         public static implicit operator BorderSpacing(string value) => new BorderSpacing(value);
 
         public static readonly BorderSpacing Initial = new BorderSpacing("initial");

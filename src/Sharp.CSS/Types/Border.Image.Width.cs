@@ -7,28 +7,28 @@
         {
         }
 
-        public BorderImageWidth(CssSize size)
+        public BorderImageWidth(Size size)
             : this($"{size}")
         {
         }
 
-        public BorderImageWidth(CssSize topAndBottom, CssSize rightAndLeft)
+        public BorderImageWidth(Size topAndBottom, Size rightAndLeft)
             : this($"{topAndBottom} {rightAndLeft}")
         {
         }
 
-        public BorderImageWidth(CssSize top, CssSize rightAndLeft, CssSize bottom)
+        public BorderImageWidth(Size top, Size rightAndLeft, Size bottom)
             : this($"{top} {rightAndLeft} {bottom}")
         {
         }
 
-        public BorderImageWidth(CssSize top, CssSize right, CssSize bottom, CssSize left)
+        public BorderImageWidth(Size top, Size right, Size bottom, Size left)
             : this($"{top} {right} {bottom} {left}")
         {
         }
 
         public static implicit operator BorderImageWidth(string value) => new BorderImageWidth(value);
-        public static implicit operator BorderImageWidth(CssSize size) => new BorderImageWidth(size);
+        public static implicit operator BorderImageWidth(Size size) => new BorderImageWidth(size);
         public static implicit operator BorderImageWidth(int size) => new BorderImageWidth(size);
 
         public static readonly BorderImageWidth Auto = new BorderImageWidth("auto");

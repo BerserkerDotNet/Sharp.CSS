@@ -10,36 +10,36 @@ namespace Sharp.CSS.Tests
         [Test]
         public void DirectUsage()
         {
-            new CssSize(25).ToString().Should().Be("25px");
-            new CssSize(30, CssUnits.rem).ToString().Should().Be("30rem");
-            new CssSize(99, CssUnits.percentage).ToString().Should().Be("99%");
-            new CssSize(25.6f, CssUnits.@in).ToString().Should().Be("25.6in");
-            new CssSize(0.63f, CssUnits.em).ToString().Should().Be("0.63em");
+            new Size(25).ToString().Should().Be("25px");
+            new Size(30, CssUnits.rem).ToString().Should().Be("30rem");
+            new Size(99, CssUnits.percentage).ToString().Should().Be("99%");
+            new Size(25.6f, CssUnits.@in).ToString().Should().Be("25.6in");
+            new Size(0.63f, CssUnits.em).ToString().Should().Be("0.63em");
         }
 
         [Test]
         public void FromInteger()
         {
-            ((CssSize)25).ToString().Should().Be("25px");
-            ((CssSize)99).ToString().Should().Be("99px");
-            ((CssSize)25.6).ToString().Should().Be("25.6px");
-            ((CssSize)0.63).ToString().Should().Be("0.63px");
+            ((Size)25).ToString().Should().Be("25px");
+            ((Size)99).ToString().Should().Be("99px");
+            ((Size)25.6).ToString().Should().Be("25.6px");
+            ((Size)0.63).ToString().Should().Be("0.63px");
         }
 
         [Test]
         public void FromString()
         {
-            ((CssSize)"25px").ToString().Should().Be("25px");
-            ((CssSize)"foo").ToString().Should().Be("foo");
-            ((CssSize)string.Empty).ToString().Should().Be("");
+            ((Size)"25px").ToString().Should().Be("25px");
+            ((Size)"foo").ToString().Should().Be("foo");
+            ((Size)string.Empty).ToString().Should().Be("");
         }
 
         [Test]
         public void FromPreDefined()
         {
-            CssSize.None.ToString().Should().Be("none");
-            CssSize.Initial.ToString().Should().Be("initial");
-            CssSize.Inherit.ToString().Should().Be("inherit");
+            Size.None.ToString().Should().Be("none");
+            Size.Initial.ToString().Should().Be("initial");
+            Size.Inherit.ToString().Should().Be("inherit");
         }
     }
 }

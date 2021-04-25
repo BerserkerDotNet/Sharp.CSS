@@ -7,28 +7,28 @@
         {
         }
         
-        public BorderRadius(CssSize radius)
+        public BorderRadius(Size radius)
             : this($"{radius}")
         {
         }
 
-        public BorderRadius(CssSize topLeftAndBottomRight, CssSize topRightAndBottomleft)
+        public BorderRadius(Size topLeftAndBottomRight, Size topRightAndBottomleft)
             : this($"{topLeftAndBottomRight} {topRightAndBottomleft}")
         {
         }
 
-        public BorderRadius(CssSize topLeft, CssSize topRightAndBottomLeft, CssSize bottomRight)
+        public BorderRadius(Size topLeft, Size topRightAndBottomLeft, Size bottomRight)
             : this($"{topLeft} {topRightAndBottomLeft} {bottomRight}")
         {
         }
 
-        public BorderRadius(CssSize topLeft, CssSize topRight, CssSize bottomRight, CssSize bottomLeft)
+        public BorderRadius(Size topLeft, Size topRight, Size bottomRight, Size bottomLeft)
             : this($"{topLeft} {topRight} {bottomRight} {bottomLeft}")
         {
         }
 
         public static BorderRadius operator /(BorderRadius value1, BorderRadius value2) => new BorderRadius($"{value1} / {value2}");
-        public static implicit operator BorderRadius(CssSize value) => new BorderRadius(value);
+        public static implicit operator BorderRadius(Size value) => new BorderRadius(value);
         public static implicit operator BorderRadius(int value) => new BorderRadius(value);
         public static implicit operator BorderRadius(float value) => new BorderRadius(value);
         public static implicit operator BorderRadius(string value) => new BorderRadius(value);

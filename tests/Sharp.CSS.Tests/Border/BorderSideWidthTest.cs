@@ -21,7 +21,7 @@ namespace Sharp.CSS.Tests.Border
         [Test]
         public void SingleValueRadius()
         {
-            ((BorderSideWidth)new CssSize(34)).ToString().Should().Be("34px");
+            ((BorderSideWidth)new Size(34)).ToString().Should().Be("34px");
             ((BorderSideWidth)4).ToString().Should().Be("4px");
             ((BorderSideWidth)7.5f).ToString().Should().Be("7.5px");
         }

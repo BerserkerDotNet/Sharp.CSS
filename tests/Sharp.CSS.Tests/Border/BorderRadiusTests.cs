@@ -21,7 +21,7 @@ namespace Sharp.CSS.Tests.Border
         {
             new BorderRadius(20).ToString().Should().Be("20px");
             new BorderRadius(25.6f).ToString().Should().Be("25.6px");
-            new BorderRadius(new CssSize(10, CssUnits.em)).ToString().Should().Be("10em");
+            new BorderRadius(new Size(10, CssUnits.em)).ToString().Should().Be("10em");
         }
 
         [Test]
