@@ -6,7 +6,7 @@ namespace Sharp.CSS.Types
     {
         private readonly string _value;
 
-        public BackgroundPosition(float x, float y, CssUnits units)
+        public BackgroundPosition(float x, float y, CssUnits units = CssUnits.px)
         {
             var unit = units.ToCssString();
             _value = $"{x}{unit} {y}{unit}";

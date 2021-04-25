@@ -28,6 +28,7 @@ namespace Sharp.CSS.Services
             return newClassName;
         }
 
+        // Use code generators to generate names?
         public TResponse GetClassNames<TStyleSets, TResponse>(TStyleSets styleSets)
             where TResponse: new()
         {

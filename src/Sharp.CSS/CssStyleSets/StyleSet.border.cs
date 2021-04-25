@@ -1,71 +1,73 @@
-﻿namespace Sharp.CSS.CssStyleSets
+﻿using Sharp.CSS.Types;
+
+namespace Sharp.CSS.CssStyleSets
 {
     public partial class StyleSet
     {
-        public string Border { get; set; }
+        public Border Border { get; set; }
 
-        public string BorderBottom { get; set; }
+        public Border BorderBottom { get; set; }
 
-        public string BorderBottomColor { get; set; }
+        public BorderColor BorderColor { get; set; }
 
-        public string BorderBottomLeftRadius { get; set; }
+        public CssColor BorderBottomColor { get; set; }
 
-        public string BorderBottomRightRadius { get; set; }
+        public BorderSideRadius BorderBottomLeftRadius { get; set; }
 
-        public string BorderBottomStyle { get; set; }
+        public BorderSideRadius BorderBottomRightRadius { get; set; }
 
-        public string BorderBottomWidth { get; set; }
+        public BorderSideStyle BorderBottomStyle { get; set; }
 
-        public string BorderCollapse { get; set; }
+        public BorderSideWidth BorderBottomWidth { get; set; }
 
-        public string BorderColor { get; set; }
+        public BorderCollapse BorderCollapse { get; set; }
 
-        public string BorderImage { get; set; }
+        public BorderSpacing BorderSpacing { get; set; }
 
-        public string BorderImageOutset { get; set; }
+        public BorderImage BorderImage { get; set; }
 
-        public string BorderImageRepeat { get; set; }
+        public BorderImageOutset BorderImageOutset { get; set; }
 
-        public string BorderImageSlice { get; set; }
+        public BorderImageRepeat BorderImageRepeat { get; set; }
 
-        public string BorderImageSource { get; set; }
+        public BorderImageSlice BorderImageSlice { get; set; }
 
-        public string BorderImageWidth { get; set; }
+        public ImageSource BorderImageSource { get; set; }
 
-        public string BorderLeft { get; set; }
+        public BorderImageWidth BorderImageWidth { get; set; }
 
-        public string BorderLeftColor { get; set; }
+        public Border BorderLeft { get; set; }
 
-        public string BorderLeftStyle { get; set; }
+        public CssColor BorderLeftColor { get; set; }
 
-        public string BorderLeftWidth { get; set; }
+        public BorderSideStyle BorderLeftStyle { get; set; }
 
-        public string BorderRadius { get; set; }
+        public BorderSideWidth BorderLeftWidth { get; set; }
 
-        public string BorderRight { get; set; }
+        public BorderRadius BorderRadius { get; set; }
 
-        public string BorderRightColor { get; set; }
+        public Border BorderRight { get; set; }
 
-        public string BorderRightStyle { get; set; }
+        public CssColor BorderRightColor { get; set; }
 
-        public string BorderRightWidth { get; set; }
+        public BorderSideStyle BorderRightStyle { get; set; }
 
-        public string BorderSpacing { get; set; }
+        public BorderSideWidth BorderRightWidth { get; set; }
 
-        public string BorderStyle { get; set; }
+        public BorderStyle BorderStyle { get; set; }
 
-        public string BorderTop { get; set; }
+        public Border BorderTop { get; set; }
 
-        public string BorderTopColor { get; set; }
+        public CssColor BorderTopColor { get; set; }
 
-        public string BorderTopLeftRadius { get; set; }
+        public BorderSideRadius BorderTopLeftRadius { get; set; }
 
-        public string BorderTopRightRadius { get; set; }
+        public BorderSideRadius BorderTopRightRadius { get; set; }
 
-        public string BorderTopStyle { get; set; }
+        public BorderSideStyle BorderTopStyle { get; set; }
 
-        public string BorderTopWidth { get; set; }
+        public BorderSideWidth BorderTopWidth { get; set; }
 
-        public string BorderWidth { get; set; }
+        public BorderWidth BorderWidth { get; set; }
     }
 }

@@ -48,3 +48,14 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -1000px 0
+    }
+
+    100% {
+        background-position: 1000px 0
+    }
+}

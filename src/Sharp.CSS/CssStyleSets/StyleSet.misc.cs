@@ -1,13 +1,14 @@
 ﻿using Sharp.CSS.Types;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sharp.CSS.CssStyleSets
 {
     public partial class StyleSet
     {
-        public string Display { get; set; }
+        /// <summary>
+        /// The display property specifies the display behavior (the type of rendering box) of an element.
+        /// In HTML, the default display property value is taken from the HTML specifications or from the browser/user default style sheet.The default value in XML is inline, including SVG elements.
+        /// </summary>
+        public Display Display { get; set; }
 
         public string Direction { get; set; }
 
