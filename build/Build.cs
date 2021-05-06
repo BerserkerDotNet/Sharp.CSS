@@ -18,8 +18,8 @@ using System.Linq;
 
 [GitHubActions(
     "deployment",
-    AutoGenerate = false,
     GitHubActionsImage.WindowsLatest,
+    AutoGenerate = false,
     OnPushBranches = new[] { MasterBranch },
     InvokedTargets = new[] { nameof(Release) },
     ImportGitHubTokenAs = nameof(GitHubToken),
