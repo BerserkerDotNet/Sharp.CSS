@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Sharp.CSS.Blazor\Sharp.CSS.Blazor.csproj" />
-    <ProjectReference Include="..\..\src\Sharp.CSS.Generators\Sharp.CSS.Generators.csproj" referenceOutputAssembly="false" OutputItemType="Analyzer"  />
+    <ProjectReference Include="..\..\src\Sharp.CSS.Generators\Sharp.CSS.Generators.csproj" referenceOutputAssembly="false" OutputItemType="Analyzer" />
   </ItemGroup>
   
   <ItemGroup>

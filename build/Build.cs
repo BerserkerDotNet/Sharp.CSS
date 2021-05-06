@@ -18,6 +18,7 @@ using System.Linq;
 
 [GitHubActions(
     "deployment",
+    AutoGenerate = false,
     GitHubActionsImage.WindowsLatest,
     OnPushBranches = new[] { MasterBranch },
     InvokedTargets = new[] { nameof(Release) },
