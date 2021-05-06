@@ -6,8 +6,8 @@ namespace Sharp.CSS.Interfaces
     {
         string GetClassName(StyleSet set, string prefix = "cssStyle");
 
-        TResponse GetClassNames<TStyleSets, TResponse>(TStyleSets styleSets)
-            where TResponse : new();
+        TResponse GetClassNames<TResponse>(object styleSets)
+            where TResponse : class, new();
     }
 
     public interface ICssStyleEmitter

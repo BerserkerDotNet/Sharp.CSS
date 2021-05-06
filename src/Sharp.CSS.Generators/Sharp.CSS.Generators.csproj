@@ -1,19 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
-    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Andrii Snihyr</Authors>
     <Company />
     <PackageProjectUrl>https://github.com/BerserkerDotNet/Sharp.CSS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/BerserkerDotNet/Sharp.CSS</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>Blazor CSS CSharp C#</PackageTags>
-    <Description>Blazor infrastructure for Sharp.CSS</Description>
+    <PackageTags>CSS CSharp C#</PackageTags>
+    <Description>Source generators for Sharp.CSS pacakge.</Description>
     <Copyright>Andrii Snihyr 2021</Copyright>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
 
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -23,26 +22,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.10.0-2.final" />
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Sharp.CSS\Sharp.CSS.csproj" />
-  </ItemGroup>
+  <PropertyGroup>
+    <NoWarn>1701;1702;NU5128</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectCapability Include="DynamicDependentFile" />
-    <ProjectCapability Include="DynamicFileNesting" />
-  </ItemGroup>
-  
   <ItemGroup>
     <None Include="..\..\readme.md" Pack="true" PackagePath="\"/>
     <None Include="..\..\LICENSE">
@@ -50,10 +47,8 @@
       <PackagePath></PackagePath>
     </None>
     <None Include="..\..\StyleCop.ruleset" Link="StyleCop.ruleset" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <!-- Package the generator in the analyzer directory of the nuget package -->
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
 </Project>

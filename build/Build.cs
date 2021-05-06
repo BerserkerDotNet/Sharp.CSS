@@ -108,9 +108,6 @@ class Build : NukeBuild
             DotNetPack(s => s
                 .SetConfiguration(Configuration)
                 .SetOutputDirectory(PackagesDirectory)
-                .EnableIncludeSource()
-                .EnableIncludeSymbols()
-                .SetSymbolPackageFormat(DotNetSymbolPackageFormat.snupkg)
                 .EnableNoBuild()
                 .CombineWith(Solution.GetProjects("Sharp.CSS*"), (s, p) => s.SetProject(p)) );
         });

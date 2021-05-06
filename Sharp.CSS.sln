@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4AE912D0-9833-4D07-AC0E-0D6796899467}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp.CSS.Generators", "src\Sharp.CSS.Generators\Sharp.CSS.Generators.csproj", "{E0C5A256-77B1-48F4-85BB-152470531BBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C5A256-77B1-48F4-85BB-152470531BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C5A256-77B1-48F4-85BB-152470531BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C5A256-77B1-48F4-85BB-152470531BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C5A256-77B1-48F4-85BB-152470531BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{9EF78BF8-72EA-4C33-871C-33944625ECAD} = {C1C0DA17-0139-443B-8694-89F34FF5EE8B}
 		{49EA2519-0C7D-49F8-BD11-19C9C1115FE1} = {2676CC45-410E-453E-8C7D-FEF44A68EC6B}
 		{15A87B68-3A96-4B89-9E0D-0CB6AAC00CDF} = {4AE912D0-9833-4D07-AC0E-0D6796899467}
+		{E0C5A256-77B1-48F4-85BB-152470531BBD} = {2676CC45-410E-453E-8C7D-FEF44A68EC6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E041E70B-A428-4EA3-A8F5-54BEAE5FD7E6}

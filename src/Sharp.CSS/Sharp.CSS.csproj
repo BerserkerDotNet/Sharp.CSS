@@ -12,20 +12,17 @@
     <RepositoryUrl>https://github.com/BerserkerDotNet/Sharp.CSS</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>CSS CSharp C#</PackageTags>
-    <Description>TBD</Description>
+    <Description>Write strongly typed CSS in C#.</Description>
     <Copyright>Andrii Snihyr 2021</Copyright>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
   <PropertyGroup>
-    <IsPackable>true</IsPackable>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
-    <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\StyleCop.ruleset</CodeAnalysisRuleSet>
     <WarningsAsErrors />
@@ -41,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\readme.md" Pack="true" PackagePath="$(PackageReadmeFile)"/>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

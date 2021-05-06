@@ -1,6 +1,9 @@
 ﻿using Sharp.CSS.CssStyleSets;
 using Sharp.CSS.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Sharp.CSS.Services
 {
@@ -28,11 +31,24 @@ namespace Sharp.CSS.Services
             return newClassName;
         }
 
-        // Use code generators to generate names?
-        public TResponse GetClassNames<TStyleSets, TResponse>(TStyleSets styleSets)
-            where TResponse: new()
+        public TResponse GetClassNames<TResponse>(object styleSets)
+            where TResponse: class, new()
         {
+            if (styleSets is null)
+            {
+                throw new ArgumentNullException(nameof(styleSets));
+            }
+
             var responseInstance = new TResponse();
+            var properties = styleSets.GetType()
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.PropertyType == typeof(StyleSet));
+
+            foreach (var property in properties)
+            {
+                var className = GetClassName((StyleSet)property.GetValue(styleSets), property.Name.ToLower());
+                responseInstance.GetType().GetProperty(property.Name).SetValue(responseInstance, className);
+            }
 
             return responseInstance;
         }
